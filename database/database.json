@@ -1,0 +1,47 @@
+{
+  "news": [
+    {
+      "id": "78he",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfMf8DwujqrocGe0GxJHH7dpwoHTPXa-nAYUCl620KsqeJBx6kmMHsvHnlQQDrN3iQxTA&usqp=CAU",
+      "title": "Google y OpenIA se suman a la pelea contra el contenido deepfake",
+      "publicationDate": "2024-09-02"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Tecnología",
+      "description": "Últimas noticias sobre tecnología e innovación"
+    },
+    {
+      "id": "2",
+      "name": "Deportes",
+      "description": "Noticias y análisis deportivos"
+    },
+    {
+      "id": "3a83",
+      "name": "Cultura",
+      "description": "Eventos culturales, libros y arte"
+    }
+  ],
+  "users": [
+    {
+      "id": "d371",
+      "name": "Your Name",
+      "email": "test@riwi.io",
+      "password": "riwi2024"
+    },
+    {
+      "id": "kt35",
+      "name": "Luis",
+      "email": "luis@riwi.io",
+      "password": "luis47grw"
+    },
+    {
+      "id": "9958",
+      "name": "Sara",
+      "email": "Sara@riwi.io",
+      "password": "12345"
+    }
+  ]
+}
