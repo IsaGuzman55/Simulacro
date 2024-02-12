@@ -1,3 +1,4 @@
+let control = false;
 
 // VERIFICACION DEL LOGIN
 function logIn() {
@@ -34,7 +35,6 @@ let resultados = fetch("http://localhost:3000/categories")
     return response.json()
 }).then(data => {
     data.forEach(function(element){  
-        console.log(data)
         let tbody = document.getElementById("categorias-tbody");
 
         let fila = document.createElement("tr");
@@ -48,85 +48,89 @@ let resultados = fetch("http://localhost:3000/categories")
         </td>`;
         tbody.appendChild(fila);
 
-    })  
-})
+      })  
+    })
 
-//Crear categorias
+
+function Editar(element){
+
+  let padre = (element.parentElement).parentElement
+  let id = padre.children[0].textContent;
+  let nameEditar = padre.children[1].textContent;
+  let descriptionEditar = padre.children[2].textContent;
+  console.log(nameEditar);  
+
+  nameCategory.value = nameEditar;
+  descriptionCategory.value = descriptionEditar;
+  idCategory.value = id;
+
+  control = true;
+}
+  
+    
+
+//Traer los inputs
 let nameCategory = document.getElementById("nameCategory");
 let descriptionCategory = document.getElementById("descriptionCategory");
+let idCategory = document.getElementById("idCategory");
+
+    
+//Crear categorias
 function createCategory(){
+
   let newCategory = {
     name: nameCategory.value,
     description: descriptionCategory.value
   }
   
-  fetch(`http://localhost:3000/categories`,{
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newCategory)
-    })
-    .then(response => {
-        return response.json()
-    }).then(data => {
-        console.log(data);
-    });
-  }
-  
-  
-  //Eliminar categorias
-  function EliminarDato(id) {
-    console.log(id)
-  fetch(`http://localhost:3000/categories/${id}`, {
-    method: `DELETE`,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then((response) => {
-    window.location.reload();
-    return response.json();
-    
-  });
-}
+  if(idCategory.value == ""){
 
-//Editar Categorias
-function Editar(element){
-
-    let padre = (element.parentElement).parentElement
-    let id = padre.children[0].textContent;
-    let nameEditar = padre.children[1].textContent;
-    let descriptionEditar = padre.children[2].textContent;
-    console.log(nameEditar);  
-  
-
-  let idCategory = document.getElementById("idCategory");
-  let modalCategory = document.getElementById("modal-category");
-  
-  nameCategory.value = nameEditar;
-  descriptionCategory.value = descriptionEditar;
-  idCategory.value = id;
-
-  let datosEditados = {
-    name: nameCategory.value,
-    description: descriptionCategory.value
-  }
-
-
-  fetch(`https://memin.io/public/api/users/${id}`,{
-          method: "PUT",
+    fetch(`http://localhost:3000/categories`,{
+          method: "POST",
           headers: {
               "Content-Type": "application/json",
           },
-          body: JSON.stringify(datosEditados)
+          body: JSON.stringify(newCategory)
       })
       .then(response => {
           return response.json()
       }).then(data => {
-          console.log(data);
           window.location.reload();
+          console.log(data);
+      });
+      
+    }else{  
+    
+      fetch(`http://localhost:3000/categories/${idCategory.value}`,{
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newCategory)
+      })
+      .then(response => {
+          return response.json()
+      }).then(data => {
+          window.location.reload();
+          console.log(data);
       });
 
+    }
+
 }
-
-
+  
+  
+//Eliminar categorias  
+function EliminarDato(id) {
+  console.log(id)
+  fetch(`http://localhost:3000/categories/${id}`, {
+    method: `DELETE`,
+    headers: {
+      "Content-Type": "application/json",
+    },  
+  }).then((response) => {
+    window.location.reload();
+    return response.json();
+    
+  });  
+}  

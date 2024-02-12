@@ -9,24 +9,24 @@
   ],
   "categories": [
     {
-      "id": "1",
-      "name": "Tecnología",
-      "description": "Últimas noticias sobre tecnología e innovación"
+      "name": "Deport",
+      "description": "Noticias y análisis deportivos",
+      "id": "2"
     },
     {
-      "id": "2",
-      "name": "Deportes",
-      "description": "Noticias y análisis deportivos"
-    },
-    {
-      "id": "3a83",
       "name": "Cultura",
-      "description": "Eventos culturales, libros y arte"
+      "description": "Eventos culturales, libros y arte",
+      "id": "3a83"
     },
     {
-      "id": "f030",
-      "name": "Antropologia",
-      "description": "Últimas noticias sobre tecnología e innovación"
+      "name": "Tecnology",
+      "description": "wmopwñs",
+      "id": "cfbb"
+    },
+    {
+      "id": "17ab",
+      "name": "Animales",
+      "description": "mkl"
     }
   ],
   "users": [
