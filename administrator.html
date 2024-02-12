@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/libs/bootstrap.min.css" />
     <title>Login</title>
-    <script src="./JS/login.js"></script>
+    <script src="./JS/login.js" defer></script>
+    <script src="./JS/guards.js" defer></script>
   </head>
   <body>
     <!-- HEADER -->
@@ -255,7 +256,9 @@
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered">
-        <form class="modal-content">
+        <form class="modal-content" id="formCategorie">
+          <input type="hidden" id="idCategory">
+
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Category</h1>
             <button
@@ -295,7 +298,8 @@
             >
               Close
             </button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="submit" class="btn btn-primary" onclick="createCategory()">Save changes</button>
+            <button>Actualizar</button>
           </div>
         </form>
       </div>

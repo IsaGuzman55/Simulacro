@@ -22,6 +22,11 @@
       "id": "3a83",
       "name": "Cultura",
       "description": "Eventos culturales, libros y arte"
+    },
+    {
+      "id": "f030",
+      "name": "Antropologia",
+      "description": "Últimas noticias sobre tecnología e innovación"
     }
   ],
   "users": [
